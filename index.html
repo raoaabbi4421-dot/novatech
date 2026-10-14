@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NovaTech | Professional Website</title>
+<meta name="description" content="NovaTech professional digital services and technology website.">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg: #08111f;
+    --card: #111e30;
+    --blue: #38bdf8;
+    --white: #f8fafc;
+    --muted: #a6b4c8;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(8, 17, 31, 0.96);
+    border-bottom: 1px solid #243247;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    color: var(--blue);
+    font-size: 25px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+nav a {
+    color: #dce6f4;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: var(--blue);
+}
+
+.btn {
+    display: inline-block;
+    background: var(--blue);
+    color: #06111f;
+    border: 0;
+    border-radius: 8px;
+    padding: 12px 22px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    transform: translateY(-2px);
+}
+
+.hero {
+    min-height: 570px;
+    padding: 100px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background:
+      radial-gradient(ellipse at top, #123454 0%, transparent 65%);
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 7px 14px;
+    color: var(--blue);
+    border: 1px solid #24506b;
+    border-radius: 30px;
+    margin-bottom: 22px;
+    font-size: 13px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 6vw, 66px);
+    line-height: 1.12;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: var(--blue);
+}
+
+.hero p {
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 30px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-outline {
+    display: inline-block;
+    border: 1px solid #49617b;
+    padding: 11px 22px;
+    border-radius: 8px;
+}
+
+.btn-outline:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+}
+
+section.content {
+    padding: 75px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: var(--muted);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background: var(--card);
+    padding: 28px;
+    border: 1px solid #26364c;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: var(--blue);
+}
+
+.card .icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 17px;
+}
+
+.card a {
+    color: var(--blue);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.google-box {
+    max-width: 720px;
+    margin: auto;
+    padding: 32px;
+    border: 1px solid #26364c;
+    background: var(--card);
+    border-radius: 16px;
+    text-align: center;
+}
+
+.google-box h2 {
+    margin-bottom: 10px;
+}
+
+.google-box p {
+    color: var(--muted);
+    margin-bottom: 22px;
+}
+
+.search-form {
+    display: flex;
+    gap: 10px;
+}
+
+.search-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 14px;
+    background: #08111f;
+    color: white;
+    border: 1px solid #40516a;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.search-form input:focus {
+    outline: 2px solid var(--blue);
+}
+
+.about {
+    background: #0c1828;
+}
+
+.about-inner {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-inner p {
+    color: var(--muted);
+    margin: 15px 0;
+}
+
+.contact-box {
+    max-width: 650px;
+    margin: auto;
+}
+
+.contact-box input,
+.contact-box textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #34465e;
+    background: var(--card);
+    color: white;
+    font: inherit;
+}
+
+.contact-box textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+.contact-box input:focus,
+.contact-box textarea:focus {
+    outline: 2px solid var(--blue);
+}
+
+.contact-box button {
+    width: 100%;
+}
+
+footer {
+    border-top: 1px solid #26364c;
+    padding: 28px 7%;
+    text-align: center;
+    color: var(--muted);
+}
+
+.footer-links {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: var(--blue);
+    margin: 0 10px;
+}
+
+#notice {
+    margin-top: 15px;
+    color: var(--blue);
+}
+
+@media (max-width: 760px) {
+    header {
+        flex-direction: column;
+        padding: 16px 5%;
+    }
+
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .hero {
+        padding: 75px 6%;
+        min-height: 500px;
+    }
+
+    section.content {
+        padding: 55px 6%;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    .search-form {
+        flex-direction: column;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a class="logo" href="#home">NovaTech.</a>
+
+    <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#google">Google</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<main>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="tag">WELCOME TO NOVATECH</span>
+
+            <h1>Build Your Future<br>
+                With <span>Smart Technology.</span>
+            </h1>
+
+            <p>
+                We create modern digital experiences with creative design,
+                innovative ideas and powerful technology.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#services" class="btn">Explore Services</a>
+                <a href="#contact" class="btn-outline">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="content" id="services">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>Explore what we can help you build.</p>
+        </div>
+
+        <div class="cards">
+            <article class="card">
+                <div class="icon">💻</div>
+                <h3>Web Development</h3>
+                <p>Responsive websites with modern layouts and clean design.</p>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+                   target="_blank" rel="noopener noreferrer">
+                    Learn HTML →
+                </a>
+            </article>
+
+            <article class="card">
+                <div class="icon">🎨</div>
+                <h3>Creative Design</h3>
+                <p>Beautiful user interfaces that look great on every screen.</p>
+                <a href="https://fonts.google.com/"
+                   target="_blank" rel="noopener noreferrer">
+                    Explore Google Fonts →
+                </a>
+            </article>
+
+            <article class="card">
+                <div class="icon">🚀</div>
+                <h3>Digital Growth</h3>
+                <p>Discover tools and resources to grow your online presence.</p>
+                <a href="https://developers.google.com/"
+                   target="_blank" rel="noopener noreferrer">
+                    Google Developers →
+                </a>
+            </article>
+        </div>
+    </section>
+
+    <section class="content" id="google">
+        <div class="google-box">
+            <h2>Search Anything on Google</h2>
+            <p>Type anything below and open your Google search results.</p>
+
+            <form class="search-form"
+                  action="https://www.google.com/search"
+                  method="get"
+                  target="_blank">
+
+                <input
+                    type="search"
+                    name="q"
+                    placeholder="Search on Google..."
+                    aria-label="Google search"
+                    required>
+
+                <button type="submit" class="btn">
+                    Search Google
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <section class="content about" id="about">
+        <div class="about-inner">
+            <div class="section-title">
+                <h2>About NovaTech</h2>
+                <p>Simple ideas. Powerful digital experiences.</p>
+            </div>
+
+            <p>
+                NovaTech is a sample professional website built using
+                HTML, CSS and JavaScript in one single HTML file.
+            </p>
+
+            <p>
+                You can customize the name, colors, services, links
+                and contact details to make this website your own.
+            </p>
+
+            <a class="btn"
+               href="https://www.google.com/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Visit Google
+            </a>
+        </div>
+    </section>
+
+    <section class="content" id="contact">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+            <p>Write a message to prepare an email.</p>
+        </div>
+
+        <form class="contact-box" id="contactForm">
+            <input type="text" id="name"
+                   placeholder="Your Name" required>
+
+            <input type="email" id="email"
+                   placeholder="Your Email" required>
+
+            <textarea id="message"
+                      placeholder="Write your message..."
+                      required></textarea>
+
+            <button type="submit" class="btn">
+                Prepare Email
+            </button>
+
+            <p id="notice" aria-live="polite"></p>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="https://www.google.com/"
+           target="_blank" rel="noopener noreferrer">Google</a>
+    </div>
+
+    <p>© <span id="year"></span> NovaTech. All rights reserved.</p>
+</footer>
+
+<script>
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+document.getElementById("contactForm").addEventListener(
+    "submit",
+    function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        const subject = encodeURIComponent("Website Contact Message");
+        const body = encodeURIComponent(
+            "Name: " + name +
+            "\nEmail: " + email +
+            "\n\nMessage:\n" + message
+        );
+
+        document.getElementById("notice").textContent =
+            "Your email app will open if one is configured.";
+
+        window.location.href =
+            "mailto:?subject=" + subject + "&body=" + body;
+    }
+);
+</script>
+
+</body>
+</html>
